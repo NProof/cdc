@@ -26,7 +26,7 @@ void test()
 	assert(board.cheses[3].type == 2);
 	board.flip(Mov(1,12,5));
 	board.move(Mov(2,3,2));
-//	cout << Mov(2,3,2).toString() << endl;
+	assert(Mov(2,3,2).toString() == "a1-b1");
 	assert(board.cheses[3].type == 0);
 	assert(board.cheses[2].type == 2);
 //	cout << board << endl;
