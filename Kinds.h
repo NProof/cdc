@@ -17,7 +17,6 @@ class Kinds
 	protected:
 
 	private:
-		int color;
 		int k,g,m,r,n,c,p;
 		int K,G,M,R,N,C,P;
 };

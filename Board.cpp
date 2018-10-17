@@ -1,7 +1,7 @@
 #include "Board.h"
 
 Board::Board()
-:darks(__UINT32_MAX__)
+:color(0), darks(__UINT32_MAX__)
 {}
 
 Board::~Board()
@@ -39,5 +39,5 @@ ostream & operator<<(ostream & os, const Board board)
 			os << " , " << board.cheses[4*i+j];
 		os << "\n";
 	}
-	return os << board.kinks;
+	return os << board.color << " #" << board.kinks;
 }
