@@ -22,6 +22,7 @@ class Player
 //	protected:
 
 //	private:
+        int color;
 };
 
 #endif // PLAYER_H

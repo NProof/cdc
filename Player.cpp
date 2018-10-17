@@ -10,6 +10,11 @@ Player::~Player()
 	//dtor
 }
 
+void Player::setColor(PROTO_CLR color)
+{
+    this->color = color;
+}
+
 void Player::generateMove(char * move, Board & board)
 {
 	std::vector<Mov *> movs = board.nextMovs();
