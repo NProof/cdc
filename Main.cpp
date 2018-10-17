@@ -40,17 +40,6 @@ int main(int arg, char *argv[])
 	Board board;
 	char move[6];
 	Player player1, player2;
-{
-	Board board;
-	assert(board.nextMovs().size()==32);
-	board.flip(Mov(1,2,2));
-	assert(board.nextMovs().size()==31);
-	board.flip(Mov(1,3,9));
-	cout << board.nextMovs().size() << endl;
-	board.eati(Mov(3,2,3));
-	board.flip(Mov(1,12,5));
-	board.move(Mov(2,3,2));
-}
 
 //	player1.generateMove(move, board);
 //	if( color == PCLR_UNKNOW )
