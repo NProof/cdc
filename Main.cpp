@@ -8,18 +8,25 @@ void test()
 	assert(mov[1].dst()==1);
 	assert(mov[2].dst()==24);
 	assert(mov[3].dst()==5);
+	assert(mov[0].toString()=="d2-d3");
+	assert(mov[1].toString()=="c2-c1");
+	assert(mov[2].toString()=="a7-d7");
+	assert(mov[3].toString()=="d2-c2");
 //	cout << mov[0] << mov[1] << mov[2] << mov[3] << endl;
 	}
 	{
 		Board board;
 	board.flip(Mov(1,2,2));
+	assert(Mov(1,2,2).toString() == "b1(g)");
 	assert(board.cheses[2].type == 2);
 	board.flip(Mov(1,3,9));
 	board.eati(Mov(3,2,3));
+//	cout << Mov(3,2,3).toString() << endl;
 	assert(board.cheses[2].type == 0);
 	assert(board.cheses[3].type == 2);
 	board.flip(Mov(1,12,5));
 	board.move(Mov(2,3,2));
+//	cout << Mov(2,3,2).toString() << endl;
 	assert(board.cheses[3].type == 0);
 	assert(board.cheses[2].type == 2);
 //	cout << board << endl;

@@ -61,6 +61,13 @@ Mov::~Mov()
 
 string Mov::toString()
 {
+	int idst = dst();
+	if(0<=src&&src<32&&0<=idst&&idst<32){
+		return string{char('d'-src%4),char('1'+src/4),'-',char('d'-idst%4),char('1'+idst/4)};
+	}
+	else if(0<=src&&src<32&&0<=kind&&kind<32){
+		return string{char('d'-src%4),char('1'+src/4),'(',"-kgmrncpKGMRNCPX"[kind],')'};
+	}
 	return "NAN";
 }
 
