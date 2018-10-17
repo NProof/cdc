@@ -14,9 +14,9 @@ class Kinds
 		~Kinds();
 
 	friend ostream & operator<<(ostream &, const Kinds);
-	protected:
+//	protected:
 
-	private:
+//	private:
 		int k,g,m,r,n,c,p;
 		int K,G,M,R,N,C,P;
 };
