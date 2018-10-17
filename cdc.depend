@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539734882 source:c:\users\jack\desktop\cdc\main.cpp
+1539735832 source:c:\users\jack\desktop\cdc\main.cpp
 	"Main.h"
 
 1539703312 c:\users\jack\desktop\cdc\main.h
@@ -10,7 +10,7 @@
 1539733543 c:\users\jack\desktop\cdc\mov.h
 	<ostream>
 
-1539734942 source:c:\users\jack\desktop\cdc\mov.cpp
+1539735724 source:c:\users\jack\desktop\cdc\mov.cpp
 	"Mov.h"
 
 1539702270 source:c:\users\jack\desktop\cdc\chess.cpp
