@@ -8,6 +8,10 @@ void test()
 	assert(mov[1].dst()==1);
 	assert(mov[2].dst()==24);
 	assert(mov[3].dst()==5);
+	assert(mov[0].toString()=="d7-d6");
+	assert(mov[1].toString()=="c7-c8");
+	assert(mov[2].toString()=="a2-d2");
+	assert(mov[3].toString()=="d7-c7");
 //	cout << mov[0] << mov[1] << mov[2] << mov[3] << endl;
 	}
 	{

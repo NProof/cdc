@@ -61,6 +61,10 @@ Mov::~Mov()
 
 string Mov::toString()
 {
+	int idst = dst();
+	if(0<src&&src<32&&0<idst&&idst<32){
+		return string{char('d'-src%4),char('8'-src/4),'-',char('d'-idst%4),char('8'-idst/4)};
+	}
 	return "NAN";
 }
 
