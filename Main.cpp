@@ -32,6 +32,36 @@ void test()
 	assert(board.cheses[2].type == 2);
 //	cout << board << endl;
 	}
+	{
+		Board board;
+    cout << board << endl;
+    cout << board.kinks.g << endl;
+	assert(board.kinks.g == 2);
+	assert(board.cheses[2].l1==1);
+	assert(board.cheses[2].u1==0);
+	assert(board.cheses[2].r1==1);
+	assert(board.cheses[2].d1==1);
+	assert(board.cheses[2].l2==0);
+	assert(board.cheses[2].u2==0);
+	assert(board.cheses[2].r2==2);
+	assert(board.cheses[2].d2==2);
+
+	/*board.flip(Mov(1,2,2));
+	cout << Mov(1,2,2).toString() << endl;
+	cout << board << endl;
+	board.flip(Mov(1,3,9));
+	cout << Mov(1,3,9).toString() << endl;
+	cout << board << endl;
+	board.eati(Mov(3,2,3));
+	cout << Mov(3,2,3).toString() << endl;
+	cout << board << endl;
+	board.flip(Mov(1,12,5));
+	cout << Mov(1,12,5).toString() << endl;
+	cout << board << endl;
+	board.move(Mov(2,3,2));
+	cout << Mov(2,3,2).toString() << endl;
+	cout << board << endl;*/
+	}
 }
 
 int main(int arg, char *argv[])
@@ -40,17 +70,6 @@ int main(int arg, char *argv[])
 	Board board;
 	char move[6];
 	Player player1, player2;
-{
-	Board board;
-	assert(board.nextMovs().size()==32);
-	board.flip(Mov(1,2,2));
-	assert(board.nextMovs().size()==31);
-	board.flip(Mov(1,3,9));
-	cout << board.nextMovs().size() << endl;
-	board.eati(Mov(3,2,3));
-	board.flip(Mov(1,12,5));
-	board.move(Mov(2,3,2));
-}
 
 //	player1.generateMove(move, board);
 //	if( color == PCLR_UNKNOW )

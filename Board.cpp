@@ -2,7 +2,36 @@
 
 Board::Board()
 :color(0), darks(__UINT32_MAX__)
-{}
+{
+    for(int i=0;i<8;i++){
+        cheses[4*i+3].l1 = 0;
+        cheses[4*i+3].l2 = 0;
+    }
+    for(int i=0;i<8;i++){
+        cheses[4*i].r1 = 0;
+        cheses[4*i].r2 = 0;
+    }
+    for(int i=0;i<4;i++){
+        cheses[i].u1 = 0;
+        cheses[i].u2 = 0;
+    }
+    for(int i=0;i<4;i++){
+        cheses[28+i].d1 = 0;
+        cheses[28+i].d2 = 0;
+    }
+    for(int i=0;i<8;i++){
+        cheses[4*i+2].l2 = 0;
+    }
+    for(int i=0;i<8;i++){
+        cheses[4*i+1].r2 = 0;
+    }
+    for(int i=0;i<4;i++){
+        cheses[4+i].u2 = 0;
+    }
+    for(int i=0;i<4;i++){
+        cheses[24+i].d2 = 0;
+    }
+}
 
 Board::~Board()
 {
