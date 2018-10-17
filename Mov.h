@@ -20,7 +20,7 @@ class Mov
 //	protected:
 
 //	private:
-		int type;
+		int type; //0: overboard, 1: flip, 2: move, 3: eat
 		int src;
 		int dir;
 		int len;
