@@ -24,6 +24,7 @@ void test()
 //	cout << Mov(3,2,3).toString() << endl;
 	assert(board.cheses[2].type == 0);
 	assert(board.cheses[3].type == 2);
+//	board.nextMovs();
 	board.flip(Mov(1,12,5));
 	board.move(Mov(2,3,2));
 	assert(Mov(2,3,2).toString() == "a1-b1");
@@ -39,8 +40,19 @@ int main(int arg, char *argv[])
 	Board board;
 	char move[6];
 	Player player1, player2;
+{
+	Board board;
+	assert(board.nextMovs().size()==32);
+	board.flip(Mov(1,2,2));
+	assert(board.nextMovs().size()==31);
+	board.flip(Mov(1,3,9));
+	cout << board.nextMovs().size() << endl;
+	board.eati(Mov(3,2,3));
+	board.flip(Mov(1,12,5));
+	board.move(Mov(2,3,2));
+}
 
-	player1.generateMove(move, board);
+//	player1.generateMove(move, board);
 //	if( color == PCLR_UNKNOW )
 //	{
 //		player1.setColor(color);
@@ -57,6 +69,6 @@ int main(int arg, char *argv[])
 		// protocol.recv(move,time);
 		player.makeMove(move);
 	}*/
-	cout << board << hex << board.darks << endl;
+//	cout << board << hex << board.darks << endl;
 	return 0;
 }

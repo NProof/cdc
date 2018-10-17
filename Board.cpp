@@ -49,6 +49,45 @@ vector<Mov *> Board::nextMovs()
         src = GetIndex(mask);
         ret.push_back(new Mov(1,src,15));
     }
+    pos = (color & 0x1) ? red : black;
+    __UINT32_TYPE__ opp = (color & 0x1) ? black : red;
+    while(pos){
+        __UINT32_TYPE__ mask = pos & (-pos);
+        pos ^= mask;
+        src = GetIndex(mask);
+        if(cheses[src].r2 || (cheses[src].r1 && cheses[src-1].type==0)){
+            ret.push_back(new Mov(2,src,src-1));
+        }
+        if(cheses[src].l2 || (cheses[src].l1 && cheses[src+1].type==0)){
+            ret.push_back(new Mov(2,src,src+1));
+        }
+        if(cheses[src].u2 || (cheses[src].u1 && cheses[src-4].type==0)){
+            ret.push_back(new Mov(2,src,src-4));
+        }
+        if(cheses[src].d2 || (cheses[src].d1 && cheses[src+4].type==0)){
+            ret.push_back(new Mov(2,src,src+4));
+        }
+        if(cheses[src].isC()){
+            if(cheses[src].r1 && cheses[src].r2 && (opp & (0x1<<(src-cheses[src].r2))))
+                ret.push_back(new Mov(3,src,src-cheses[src].r2));
+            if(cheses[src].l1 && cheses[src].l2 && (opp & (0x1<<(src+cheses[src].l2))))
+                ret.push_back(new Mov(3,src,src+cheses[src].l2));
+            if(cheses[src].u1 && cheses[src].u2 && (opp & (0x1<<(src-4*cheses[src].u2))))
+                ret.push_back(new Mov(3,src,src-4*cheses[src].u2));
+            if(cheses[src].d1 && cheses[src].d2 && (opp & (0x1<<(src+4*cheses[src].d2))))
+                ret.push_back(new Mov(3,src,src+4*cheses[src].d2));
+        }
+        else{
+            if(cheses[src].r1 == 1 && (cheses[src].canMov(cheses[src-1].type)))
+                ret.push_back(new Mov(3,src,src-1));
+            if(cheses[src].l1 == 1 && (cheses[src].canMov(cheses[src+1].type)))
+                ret.push_back(new Mov(3,src,src+1));
+            if(cheses[src].u1 == 1 && (cheses[src].canMov(cheses[src-4].type)))
+                ret.push_back(new Mov(3,src,src-4));
+            if(cheses[src].d1 == 1 && (cheses[src].canMov(cheses[src+4].type)))
+                ret.push_back(new Mov(3,src,src+4));
+        }
+    }
 	return ret;
 }
 

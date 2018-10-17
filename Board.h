@@ -29,7 +29,7 @@ class Board
 
 //	private:
 		Chess cheses[32];
-		__UINT32_TYPE__ darks;
+		__UINT32_TYPE__ darks, black, red;
 		int color; // 0: unknown, 1:red, 2:black, 3:end
 		Kinds kinks;
 };
