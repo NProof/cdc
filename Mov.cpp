@@ -90,5 +90,9 @@ int Mov::dst() const
 
 std::ostream & operator<<(std::ostream & os, const Mov mov)
 {
-	return os << mov.type << " := " << mov.src << " " << mov.dst() << std::endl;
+    return os << " type: " << mov.type
+    << " src: " << mov.src << " dir: " << mov.dir
+    << " len: " << mov.len << " kind: " << mov.kind
+    << " dst(): " << mov.dst() << endl;
+//	return os << mov.type << " := " << mov.src << " " << mov.dst() << std::endl;
 }
